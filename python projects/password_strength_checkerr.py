@@ -49,3 +49,18 @@ else:
 myhash = hashIt(pw)
 print("your password hash is:", myhash)
 
+f = open("passwords.txt", "a")
+f.write(pw + "\n")
+f.close()
+
+print("saved password to file, all good")
+
+check_pw = input("Type your password again to check: ")
+
+if check_pw == pw:
+    print("Match!")
+else:
+    print("no match, passwords dont line up")
+
+print("here's a random password you could use instead:")
+print(makeRandomPassword())  #brain ain't braining so added this random f
